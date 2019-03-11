@@ -7,6 +7,7 @@ using namespace std;
 
 string forethought(int num)
 {
+    string result = "no solution";
     int left[] = {0, 1, 8, 16};
     int right[] = {0, 1, 8, 16};
 
@@ -21,27 +22,27 @@ string forethought(int num)
         {
             if (left[i] * right[j] == num)
             {
-                key
+                result = key.at(left[i]) + " * " + key.at(right[i]);
             }
 
             if (left[i] / right[j] == num)
             {
-
+                result = key.at(left[i]) + " / " + key.at(right[i]);
             }
 
             if (left[i] + right[j] == num)
             {
-
+                result = key.at(left[i]) + " + " + key.at(right[i]);
             }
 
-            if (left[i] + right[j] == num)
+            if (left[i] - right[j] == num)
             {
-
+                result = key.at(left[i]) + " - " + key.at(right[i]);
             }
         }
     }
 
-    return "no solution";
+    return result;
 }
 
 TEST_CASE("Given #1")
