@@ -1,12 +1,47 @@
 #define CATCH_CONFIG_MAIN
-#include <string>
 #include "catch.hpp"
 using namespace std;
 
+#include <string>
+#include <map>
+
 string forethought(int num)
 {
-    string result = "";
-    return result;
+    int left[] = {0, 1, 8, 16};
+    int right[] = {0, 1, 8, 16};
+
+    map<int, string> key = {
+        {0, "4 - 4"}, {1, "4 / 4"}, {8, "4 + 4"}, {16, "4 * 4"}
+    };
+
+    // for left and right sides 0, 1, 8, 16 are possible values
+    for (int i = 0; i < 4; ++i)
+    {
+        for (int j = 0; j < 4; ++j)
+        {
+            if (left[i] * right[j] == num)
+            {
+                key
+            }
+
+            if (left[i] / right[j] == num)
+            {
+
+            }
+
+            if (left[i] + right[j] == num)
+            {
+
+            }
+
+            if (left[i] + right[j] == num)
+            {
+
+            }
+        }
+    }
+
+    return "no solution";
 }
 
 TEST_CASE("Given #1")
