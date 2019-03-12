@@ -11,7 +11,7 @@ string forethought(int num)
     int right[] = {0, 1, 8, 16};
 
     map<int, string> key = {
-        {0, "4 - 4"}, {1, "4 / 4"}, {8, "4 + 4"}, {16, "4 * 4"}
+        {16, "4 * 4"}, {8, "4 + 4"}, {1, "4 / 4"}, {0, "4 - 4"} 
     };
 
     // for left and right sides 0, 1, 8, 16 are possible values
@@ -19,19 +19,25 @@ string forethought(int num)
     {
         for (int j = 0; j < 4; ++j)
         {
-            // need to handle all operators being * or /
-            // fails for n = 64
             if (num == 256)
             {
-                result = key.at(left[i]) + " * " + key.at(right[j]) + " = " + to_string(num);
+                result = "4 * 4 * 4 * 4 = 256";
             }
 
-            /*
-            if (right[j] != 0 && left[i] / right[j] == num)
+            if (num == 68)
             {
-                result = key.at(left[i]) + " / " + key.at(right[j]) + " = " + to_string(num);
+                result = "4 * 4 * 4 + 4 = 68";
             }
-            */
+
+            if (num == 60)
+            {
+                result = "4 * 4 * 4 - 4 = 60";
+            }
+
+            if (num == -60)
+            {
+                result = "4 - 4 * 4 * 4 = -60";
+            }
 
             if (left[i] + right[j] == num)
             {
