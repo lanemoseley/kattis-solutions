@@ -1,35 +1,34 @@
 #include <iostream>
+#include <bitset>
 
 using namespace std;
-
-int isPrime(int x)
-{
-     if (x == 1)
-   {
-      return 0;
-   }
-
-   for (int i = 2; i < x; ++i)
-   {
-      if (x % i == 0)
-      {
-         return 0;
-      }
-   }
-
-   return 1;
-}
 
 int main()
 {
    int n, q, x, sum = 0;
-
+   
    cin >> n;
    cin >> q;
 
-   for (int i = 2; i <= n; ++i)
-   {
-      if (isPrime(i))
+   bitset<100000000> arr;
+
+   arr[0] = 0;
+   arr[1] = 0;
+
+   for (int i = 2; i < n + 1; ++i)
+   {  
+      bool resultFound = false;
+
+      for (int j = 2; !resultFound && j < i; ++j)
+      {
+         if (i % j == 0)
+         {
+            resultFound = true;
+            arr[i] = 0;
+         }
+      }
+
+      if (arr[i])
          ++sum;
    }
 
@@ -38,9 +37,9 @@ int main()
    do {
 
       cin >> x;
-      cout << isPrime(x) << endl;
+      cout << arr[x] << endl;
 
-   } while (--q);
+   } while ( --q );
 
    return 0;
 }
