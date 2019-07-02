@@ -31,6 +31,13 @@ int main()
                 words.erase(name);
             }
 
+            if (values.find(value) != values.end())
+            {
+                string tmp = values[value];
+                words.erase(tmp);
+                values.erase(value);
+            }
+
             words[name] = value;
             values[value] = name;
         }
