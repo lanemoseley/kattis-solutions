@@ -1,30 +1,17 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    int d_count = 0;
-    int j_count = 0;
-    char aah;
+    string jon;
+    string doctor;
 
-    while (cin.peek() != '\n')
-    {
-        cin >> aah;
-        if (aah == 'a')
-            ++j_count;
-    }
+    getline(cin, jon);
+    getline(cin, doctor);
 
-    cin.ignore();
-    
-    while (cin.peek() != '\n')
-    {
-        cin >> aah;
-        if (aah == 'a')
-            ++d_count;
-    }
-
-    cout << (j_count >= d_count ? "go" : "no") << endl;
+    cout << (jon.size() >= doctor.size() ? "go" : "no") << endl;
 
     return 0;
 }
