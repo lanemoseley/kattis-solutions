@@ -4,17 +4,10 @@ using namespace std;
 
 int main()
 {
-    int n, carrots;
+    int carrots;
 
-    cin >> n;
-
-    cin.ignore();
+    cin.ignore(256, ' ');
     cin >> carrots;
-
-    do {
-        cin.ignore('\n');    
-        n--;
-    } while (n > 0);
 
     cout << carrots << endl;
 
